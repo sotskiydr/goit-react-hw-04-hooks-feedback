@@ -11,8 +11,8 @@ const Section = ({
   positivePercentage,
   handleIncrement,
 }) => {
-  const { good, neutral, bad } = state;
-  const btnNames = Object.keys(state);
+  const [good, neutral, bad] = state;
+  const btnNames = ['good', 'neutral', 'bad'];
   function renderStatistic() {
     return (
       <Statistics
@@ -40,7 +40,7 @@ const Section = ({
 
 Section.propTypes = {
   title: PropTypes.string.isRequired,
-  state: PropTypes.object.isRequired,
+  state: PropTypes.array.isRequired,
   total: PropTypes.number.isRequired,
   positivePercentage: PropTypes.string.isRequired,
   handleIncrement: PropTypes.func.isRequired,
